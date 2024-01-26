@@ -6,7 +6,7 @@ let globalId = 0;
 class HubspotForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log("reacrt-hubspot-form");
+    console.log("reacrt-hubspot-form!!");
     this.state = {
       loaded: false,
     };
@@ -31,10 +31,10 @@ class HubspotForm extends React.Component {
         target: `#${this.el.getAttribute(`id`)}`,
         onFormSubmit: ($form) => {
           // ref: https://developers.hubspot.com/docs/methods/forms/advanced_form_options
-          console.log("original: ", _formData);
           var formData = new FormData($form);
-          var _fodmData = $form.serializeArray();
           console.log("new: ", formData);
+          var _fodmData = $form.serializeArray();
+          console.log("original: ", _formData);
 
           this.props.onSubmit(formData);
         },
