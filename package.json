@@ -18,18 +18,17 @@
   "license": "MIT",
   "scripts": {
     "build": "vite build",
-    "dev": "vite dev ---input './dev/dev.js, ./dev/index.html' --react --browser",
+    "dev": "vite --config ./vite.config.dev.ts",
     "test": "echo 'no test'",
     "travis": "opn https://travis-ci.org/escaladesports/react-hubspot-form/branches"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^16.1.1",
     "styled-jsx": "^2.2.4",
     "vite": "^5.0.12"
   },
   "dependencies": {
-    "jquery": "^3.7.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
