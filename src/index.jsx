@@ -1,12 +1,10 @@
 import React from "react";
-import "jquery";
 
 let globalId = 0;
 
 class HubspotForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log("reacrt-hubspot-form!!");
     this.state = {
       loaded: false,
     };
@@ -31,10 +29,13 @@ class HubspotForm extends React.Component {
         target: `#${this.el.getAttribute(`id`)}`,
         onFormSubmit: ($form) => {
           // ref: https://developers.hubspot.com/docs/methods/forms/advanced_form_options
-          var formData = new FormData($form);
-          console.log("new: ", formData);
-          var _fodmData = $form.serializeArray();
-          console.log("original: ", _formData);
+          window.console.log("form", $form);
+
+          const rawFormData = new FormData($form);
+          const formData = [...rawFormData.entries()].map(([name, value]) => ({
+            name,
+            value,
+          }));
 
           this.props.onSubmit(formData);
         },
