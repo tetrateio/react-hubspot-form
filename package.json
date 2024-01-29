@@ -6,28 +6,29 @@
     "hubspot",
     "form"
   ],
-  "main": "dist/index.js",
+  "main": "dist/react-hubspot-form.js",
   "author": "Kennedy Rose <krose@escaladesports.com>",
+  "exports": {
+    ".": "./dist/react-hubspot-form.umd.js"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/escaladesports/react-hubspot-form.git"
+    "url": "https://github.com/tetrateio/react-hubspot-form.git"
   },
   "license": "MIT",
   "scripts": {
-    "analyze": "esca-scripts analyze --react --component --input ./src/index.js",
-    "build": "esca-scripts build --input ./src/index.js --output ./dist/index.js --react --component --babel",
-    "dev": "esca-scripts dev ---input './dev/dev.js, ./dev/index.html' --react --browser",
-    "prepublishOnly": "npm run build",
+    "build": "vite build",
+    "dev": "vite --config ./vite.config.dev.ts",
     "test": "echo 'no test'",
     "travis": "opn https://travis-ci.org/escaladesports/react-hubspot-form/branches"
   },
   "devDependencies": {
-    "esca-scripts": "^0.13.1",
-    "opn-cli": "^3.1.0",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1"
+    "@vitejs/plugin-react": "^4.2.1",
+    "styled-jsx": "^2.2.4",
+    "vite": "^5.0.12"
   },
   "dependencies": {
-    "styled-jsx": "^2.2.4"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
